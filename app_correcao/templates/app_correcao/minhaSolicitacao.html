@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'Minhas Solicitações'</title>
+</head>
+<body>
+        {% if user.is_authenticated %}
+                <hi>Solicitações de {{ user }}</hi>
+                {% for i in solicitacoes %}
+                    <ul type = "square">
+                        <li>{{ i.solicitante}}</li>
+                            <li>{{ i.origem}}</li>
+                            <li>{{ i.destino}}</li>
+                            <li>{{ i.datahora}}</li>
+                    </ul>
+
+                {% endfor %}
+        {% endif %}
+</body>
+</html>
